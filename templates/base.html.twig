@@ -37,7 +37,7 @@
 
           <form method="POST"
             class="form-inline my-0 mr-md-auto"
-            action="search_results.php">
+            action="{{ path('search_results') }}">
             <input class="form-control mr-sm-2"
               type="search"
               placeholder="title"
@@ -59,8 +59,10 @@
             <a class="p-2 text-dark" href="{{ path('playlist') }}">You & Me</a>
             <a class="p-2 text-dark" href="admin/my_profile.php">My account</a>
           </nav>
-          <a class="btn btn-outline-primary mr-2" href="pricing.php">Sign up</a>
-          <a class="btn btn-outline-primary" href="login.php">Sign in</a>
+          <a class="btn btn-outline-primary mr-2" href="{{ path('pricing') }}">
+            Sign up
+          </a>
+          <a class="btn btn-outline-primary" href="{{ path('login') }}">Sign in</a>
         </div>
       {% endblock %}
       {% block main %}
@@ -122,7 +124,7 @@
     <script>
       $(function () { $('[data-toggle="tooltip"]').tooltip() })
     </script>
-    {% block customjavascript %}
+    {% block customjavascripts %}
 
     {% endblock %}
   </body>
