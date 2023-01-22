@@ -15,4 +15,20 @@ class FrontController extends AbstractController
     {
         return $this->render('front/index.html.twig');
     }
+
+    /**
+     * @Route("/playlist", name="playlist")
+     */
+    public function playlist(): Response
+    {
+        return $this->render('front/playlist.html.twig');
+    }
+
+    /**
+     * @Route("/playlist-details", name="playlist_details")
+     */
+    public function playlistDetails(): Response
+    {
+        return $this->render('front/playlist_details.html.twig');
+    }
 }

@@ -1,16 +1,15 @@
-<?php
-$sample_videos = [289729765,238902809,150870038,219727723,289879647,261379936,289029793,60594348,290253648];
-?>
+{% extends 'base.html.twig' %}
 
-<?php include('includes/_header.php'); ?>
-<?php include('includes/_menu.php'); ?>
+{% block main %}
+
+{% set sample_music = ['d41d8cd98f00b204e9800998ecf8427e','d41d8cd98f00b204e9800998ecf8427e','d41d8cd98f00b204e9800998ecf8427e','d41d8cd98f00b204e9800998ecf8427e','d41d8cd98f00b204e9800998ecf8427e','d41d8cd98f00b204e9800998ecf8427e','d41d8cd98f00b204e9800998ecf8427e','d41d8cd98f00b204e9800998ecf8427e','d41d8cd98f00b204e9800998ecf8427e'] %}
 
 <main role="main">
 
     <section class="jumbotron text-center">
         <div class="container">
 
-            <h1 class="jumbotron-heading">Category - Funny</h1>
+            <h1 class="jumbotron-heading">Category - Motivation</h1>
             <div class="btn-group">
                 <div class="dropdown ml-2">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -19,7 +18,7 @@ $sample_videos = [289729765,238902809,150870038,219727723,289879647,261379936,28
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <ul class="mr-5">
-                            <li><a href="#">Funny</a></li>
+                            <li><a href="#">Motivation</a></li>
                             <ul>
                                 <li><a href="#">Surprising</a></li>
                                 <li><a href="#">Exciting</a></li>
@@ -50,15 +49,14 @@ $sample_videos = [289729765,238902809,150870038,219727723,289879647,261379936,28
         <div class="container">
 
             <div class="row">
-                <?php foreach($sample_videos as $video): ?>
+                {% for music in sample_music %}
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                         <div align="center" class="embed-responsive embed-responsive-16by9">
-                            <iframe class="" src="https://player.vimeo.com/video/<?=$video?>" frameborder="0"
-                                allowfullscreen></iframe>
+                        <img src="https://e-cdns-images.dzcdn.net/images/misc/{{music}}/134x264-000000-80-0-0.jpg" />
                         </div>
                         <div class="card-body">
-                            <h3>Video title</h3>
+                            <h3>Playlist title</h3>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
 
@@ -78,25 +76,24 @@ $sample_videos = [289729765,238902809,150870038,219727723,289879647,261379936,28
                                     <!-- <button data-toggle="tooltip" data-placement="top" title="You don't like the video. Click to undo" type="button" class="btn btn-primary btn-outline-danger btn-sm mr-2">
                                     <i class="fa fa-thumbs-down"></i>
                                     </button> -->
-                                    <a href="video_details.php#video_comments">Comments (32)</a>
+                                    <a href="{{path('playlist_details')}}#playlist_comments">Comments (32)</a>
                                 </div>
                                 <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php endforeach; ?>
+                {% endfor %}
 
                 <!-- no members -->
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                         <div align="center" class="embed-responsive embed-responsive-16by9">
-                            <iframe class="" src="https://player.vimeo.com/video/113716040" frameborder="0"
-                                allowfullscreen></iframe>
+                            <img src="https://e-cdns-images.dzcdn.net/images/misc/d41d8cd98f00b204e9800998ecf8427e/134x264-000000-80-0-0.jpg" />
                         </div>
                         <div class="card-body">
-                            <h3>Video title</h3>
-                            <p class="card-text text-danger">Video for <b>MEMBERS</b> only. <a href="pricing.php">Sign
+                            <h3>Playlist title</h3>
+                            <p class="card-text text-danger">Music for <b>MEMBERS</b> only. <a href="pricing.php">Sign
                                     up</a> for one month for free.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
@@ -104,7 +101,7 @@ $sample_videos = [289729765,238902809,150870038,219727723,289879647,261379936,28
                                     <i class="fa fa-thumbs-up mr-2"><small class="text-muted">(23)</small></i>
                                     <i class="fa fa-thumbs-down mr-2"><small class="text-muted">(9)</small></i>
 
-                                    <a href="video_details.php#video_comments">Comments (32)</a>
+                                    <a href="{{path('playlist_details')}}#playlist_comments">Comments (32)</a>
                                 </div>
                                 <small class="text-muted">9 mins</small>
                             </div>
@@ -140,6 +137,4 @@ $sample_videos = [289729765,238902809,150870038,219727723,289879647,261379936,28
 
 
 </main>
-
-<?php include('includes/_footer_links.php'); ?>
-<?php include('includes/_footer.php'); ?>
+{% endblock %}
