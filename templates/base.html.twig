@@ -32,7 +32,7 @@
       {% block menu %}
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
           <h5 class="my-0 mr-md-auto font-weight-normal">
-            <a href="index.php">Awesome Music</a>
+            <a href="{{path('main_page')}}">Awesome Music</a>
           </h5>
 
           <form method="POST"
@@ -48,15 +48,7 @@
           </form>
 
           <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="{{ path('playlist') }}">
-              Motivation
-            </a>
-            <a class="p-2 text-dark" href="{{ path('playlist') }}">Party</a>
-            <a class="p-2 text-dark" href="{{ path('playlist') }}">Chill</a>
-            <a class="p-2 text-dark" href="{{ path('playlist') }}">
-              Melancholy
-            </a>
-            <a class="p-2 text-dark" href="{{ path('playlist') }}">You & Me</a>
+            {{ render(controller("App\\Controller\\FrontController::mainCategories")) }}
             <a class="p-2 text-dark" href="{{ path('admin_main_page') }}">My account</a>
           </nav>
           <a class="btn btn-outline-primary mr-2" href="{{ path('pricing') }}">

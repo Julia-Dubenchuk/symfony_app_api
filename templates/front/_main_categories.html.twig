@@ -1,0 +1,3 @@
+{% for category in categories %}
+    <a class="p-2 text-dark" href="{{ path('playlist', {'categoryname': category.name|lower|slugify, 'id': category.id}) }}">{{category.name}}</a>
+{% endfor %}
