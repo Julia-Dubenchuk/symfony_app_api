@@ -24,7 +24,7 @@ class FrontController extends AbstractController
     public function playlist($id, CategoryTreeFrontPage $categories): Response
     {
         $categories->getCategoryListAndParent($id);
-        
+
         return $this->render('front/playlist.html.twig',[
             'subcategories' => $categories,
         ]);

@@ -43,7 +43,7 @@ class AdminController extends AbstractController
         {
             $is_invalid = ' is-invalid';
         }
-
+        dump($categories);
         return $this->render('admin/categories.html.twig', [
             'categories' => $categories->categorylist,
             'form' => $form->createView(),
