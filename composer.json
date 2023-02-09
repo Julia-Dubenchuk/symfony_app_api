@@ -19,6 +19,7 @@
     "symfony/flex": "^1.19",
     "symfony/form": "4.4.*",
     "symfony/framework-bundle": "4.4.*",
+    "symfony/security-bundle": "4.4.*",
     "symfony/twig-bundle": "4.4.*",
     "symfony/validator": "4.4.*",
     "symfony/webpack-encore-bundle": "^1.16",
