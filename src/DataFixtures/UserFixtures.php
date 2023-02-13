@@ -37,6 +37,7 @@ class UserFixtures extends Fixture
     {
         return [
             ['John', 'Wayne', 'jw@symf4.loc', 'passw', 'hjd8dehdh', ['ROLE_ADMIN']],
+            ['John', 'Doe', 'jd@symf4.loc', 'passw', null, ['ROLE_USER']],
         ];
     }
 }
